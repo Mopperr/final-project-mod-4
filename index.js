@@ -684,6 +684,56 @@ function toggleHighlightAllVerses(verseNumber) {
     }
 }
 
+// Contact Modal Functionality
+const contactModal = document.getElementById('contactModal');
+const floatingMessageBtn = document.getElementById('floatingMessageBtn');
+const closeContactModal = document.querySelector('.close-contact-modal');
+const contactLinks = document.querySelectorAll('a[href="#contact"]');
+
+// Open modal when floating button is clicked
+floatingMessageBtn.addEventListener('click', () => {
+    contactModal.classList.remove('hidden');
+});
+
+// Open modal when contact links are clicked
+contactLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        contactModal.classList.remove('hidden');
+    });
+});
+
+// Close modal when X is clicked
+closeContactModal.addEventListener('click', () => {
+    contactModal.classList.add('hidden');
+});
+
+// Close modal when clicking outside
+contactModal.addEventListener('click', (e) => {
+    if (e.target === contactModal) {
+        contactModal.classList.add('hidden');
+    }
+});
+
+// Close modal with Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !contactModal.classList.contains('hidden')) {
+        contactModal.classList.add('hidden');
+    }
+});
+
+// Handle form submission
+const contactForm = document.getElementById('contactForm');
+contactForm.addEventListener('submit', (e) => {
+    // Form will be handled by Formspree
+    // Add a success message after submission
+    setTimeout(() => {
+        alert('Thank you for your message! We will get back to you soon.');
+        contactModal.classList.add('hidden');
+        contactForm.reset();
+    }, 100);
+});
+
 
 // Add animation on scroll for cards
 const observerOptions = {

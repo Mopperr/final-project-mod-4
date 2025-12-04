@@ -53,8 +53,13 @@ async function searchMovies() {
     try {
         // Search for movies
         const searchUrl = `https://www.omdbapi.com/?apikey=${API_KEY}&s=${encodeURIComponent(searchTerm)}&type=movie`;
+        console.log('Searching:', searchUrl);
+        
         const searchResponse = await fetch(searchUrl);
+        console.log('Search response status:', searchResponse.status);
+        
         const searchData = await searchResponse.json();
+        console.log('Search data:', searchData);
 
         if (searchData.Response === 'False') {
             throw new Error(searchData.Error || 'No movies found');
@@ -62,6 +67,7 @@ async function searchMovies() {
 
         // Get first 6 movies
         const movies = searchData.Search.slice(0, 6);
+        console.log('Found movies:', movies.length);
         
         // Fetch detailed information for all 6 movies
         const movieDetailsPromises = movies.map(movie => 

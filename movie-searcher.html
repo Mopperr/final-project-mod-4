@@ -10,17 +10,27 @@
     <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="nav-container">
-            <div class="logo">
+            <a href="index.html" class="logo">
                 <img src="Scripture Provisions.jpg" alt="Scripture Provisions Logo" class="logo-image" />
                 <span class="logo-text">Scripture Provisions</span>
-            </div>
-            <ul class="nav-links">
+            </a>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
                 <li><a href="index.html">Bible Search</a></li>
                 <li><a href="index.html#home">Home</a></li>
                 <li><a href="#search">Search Movies</a></li>
             </ul>
         </div>
     </nav>
+
+    <!-- Hero Banner Image -->
+    <section class="hero-banner-content">
+        <img src="owl watching for movies.jpg" alt="Movie Night Scene" class="hero-banner-image">
+    </section>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
@@ -34,12 +44,16 @@
     <!-- Search Section -->
     <section class="search-section" id="search">
         <div class="search-container">
-            <h2>Search for Movies</h2>
-            <p class="search-instructions">Enter a movie title to find up to 6 results with detailed information</p>
-            
-            <div class="search-box">
-                <input type="text" id="movieInput" placeholder="Enter movie title..." class="search-input">
-                <button id="searchBtn">Search Movies</button>
+            <div class="search-bubble">
+                <div class="bubble-icon">🎬</div>
+                <h2>Search for Movies</h2>
+                <p class="search-instructions">Enter a movie title to find up to 6 results with detailed information</p>
+                
+                <div class="search-box">
+                    <input type="text" id="movieInput" placeholder="Enter movie title..." class="search-input">
+                    <button id="searchBtn">🔍 Search Movies</button>
+                </div>
+                <p class="search-hint">💡 Try searching for classics like "The Godfather" or "Casablanca"</p>
             </div>
 
             <div id="loading" class="loading hidden">

@@ -763,5 +763,41 @@ document.querySelectorAll('.translation-card').forEach(card => {
     observer.observe(card);
 });
 
+// Hamburger Menu Functionality
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('navLinks');
+
+if (hamburger && navLinks) {
+    // Toggle menu on hamburger click
+    hamburger.addEventListener('click', (e) => {
+        e.stopPropagation();
+        hamburger.classList.toggle('active');
+        navLinks.classList.toggle('active');
+    });
+    
+    // Close menu when clicking on a nav link
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navLinks.classList.remove('active');
+        });
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (navLinks.classList.contains('active') && 
+            !navLinks.contains(e.target) && 
+            !hamburger.contains(e.target)) {
+            hamburger.classList.remove('active');
+            navLinks.classList.remove('active');
+        }
+    });
+    
+    // Prevent clicks inside nav menu from closing it
+    navLinks.addEventListener('click', (e) => {
+        e.stopPropagation();
+    });
+}
+
 console.log('Bible Teacher Searcher initialized! 📖');
 console.log('Supported translations: KJV, Douay-Rheims 1899, Latin Vulgate');

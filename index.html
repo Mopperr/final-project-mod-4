@@ -10,16 +10,21 @@
     <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="nav-container">
-            <div class="logo">
+            <a href="index.html" class="logo">
                 <img src="Scripture Provisions.jpg" alt="Scripture Provisions Logo" class="logo-image" />
                 <span class="logo-text">Scripture Provisions</span>
-            </div>
-            <ul class="nav-links">
+            </a>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#search">Search Verses</a></li>
                 <li><a href="movie-searcher.html">Movie Search</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#contact" class="contact-btn">Contact</a></li>
             </ul>
         </div>
     </nav>

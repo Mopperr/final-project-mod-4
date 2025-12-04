@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Searcher - Scripture Provisions</title>
+    <link rel="stylesheet" href="movie-styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="Scripture Provisions.jpg" alt="Scripture Provisions Logo" class="logo-image" />
+                <span class="logo-text">Scripture Provisions</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="INDEX.HTML">Bible Search</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#search">Search Movies</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Movie Searcher</h1>
+            <h2>Discover Films & Their Stories</h2>
+            <p>Search for movies and explore detailed information from our comprehensive database</p>
+        </div>
+    </section>
+
+    <!-- Search Section -->
+    <section class="search-section" id="search">
+        <div class="search-container">
+            <h2>Search for Movies</h2>
+            <p class="search-instructions">Enter a movie title to find up to 6 results with detailed information</p>
+            
+            <div class="search-box">
+                <input type="text" id="movieInput" placeholder="Enter movie title..." class="search-input">
+                <button id="searchBtn">Search Movies</button>
+            </div>
+
+            <div id="loading" class="loading hidden">
+                <div class="spinner"></div>
+                <p>Searching movies...</p>
+            </div>
+
+            <div id="error" class="error-message hidden"></div>
+
+            <!-- Results Container -->
+            <div id="results" class="results-container hidden">
+                <!-- Detailed Cards (First 3 Movies) -->
+                <div id="detailedResults" class="detailed-results"></div>
+                
+                <!-- Simple Cards (Movies 4-6) -->
+                <h3 class="simple-results-title">More Results</h3>
+                <div id="simpleResults" class="simple-results"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal for viewing full movie details -->
+    <div id="movieModal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Scripture Provisions. Movie data provided by OMDB API.</p>
+            <p>Explore entertainment with purpose.</p>
+        </div>
+    </footer>
+
+    <script src="movie-searcher.js"></script>
+</body>
+</html>

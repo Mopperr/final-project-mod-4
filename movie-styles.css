@@ -417,61 +417,304 @@ body {
 }
 
 /* Responsive Design */
+
+/* Tablets and smaller laptops */
+@media (max-width: 1024px) {
+    .search-container {
+        padding: 0 1.5rem;
+    }
+    
+    .detailed-results {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}
+
+/* Tablets (portrait) and large phones (landscape) */
 @media (max-width: 768px) {
+    .navbar {
+        padding: 0.75rem 0;
+    }
+    
+    .nav-container {
+        padding: 0 1rem;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
     .nav-links {
         gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     .nav-links a {
-        padding: 0.5rem;
+        padding: 0.4rem 0.8rem;
         font-size: 0.9rem;
     }
 
+    .logo {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+
     .logo-image {
-        width: 80px;
-        height: 80px;
+        width: 70px;
+        height: 70px;
+    }
+    
+    .logo-text {
+        font-size: 1.3rem;
+    }
+
+    .hero {
+        margin-top: 120px;
+        padding: 3rem 1.5rem;
     }
 
     .hero h1 {
-        font-size: 2rem;
+        font-size: 2.2rem;
     }
 
     .hero h2 {
-        font-size: 1.3rem;
+        font-size: 1.4rem;
+    }
+    
+    .hero p {
+        font-size: 1.1rem;
+    }
+
+    .search-section {
+        padding: 3rem 1.5rem;
+    }
+    
+    .search-container h2 {
+        font-size: 2rem;
     }
 
     .search-box {
         flex-direction: column;
+        max-width: 100%;
+    }
+    
+    .search-input {
+        font-size: 1rem;
+        padding: 0.9rem 1.2rem;
+    }
+    
+    #searchBtn {
+        width: 100%;
+        padding: 1rem;
     }
 
     .detailed-results {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .movie-poster {
+        height: 350px;
     }
 
     .simple-results {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .simple-results-title {
+        font-size: 1.8rem;
     }
 
+    .modal {
+        padding: 1rem;
+    }
+    
     .modal-content {
-        margin: 1rem;
+        max-width: 100%;
     }
 
     .modal .movie-poster {
         height: 350px;
     }
+    
+    .close-modal {
+        right: 1rem;
+        top: 0.5rem;
+        font-size: 2rem;
+    }
 }
 
+/* Large phones (portrait) */
 @media (max-width: 480px) {
-    .logo-image {
-        width: 60px;
-        height: 60px;
+    .navbar {
+        padding: 0.5rem 0;
+    }
+    
+    .nav-container {
+        padding: 0 0.75rem;
     }
 
+    .nav-links {
+        gap: 0.5rem;
+    }
+
+    .nav-links a {
+        font-size: 0.75rem;
+        padding: 0.3rem 0.5rem;
+    }
+
+    .logo-image {
+        width: 50px;
+        height: 50px;
+        border: 3px solid var(--secondary-color);
+    }
+    
     .logo-text {
-        font-size: 1rem;
+        font-size: 1.1rem;
     }
 
     .hero {
+        margin-top: 120px;
+        padding: 2.5rem 1rem;
+    }
+    
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+    
+    .hero h2 {
+        font-size: 1.2rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
+    
+    .search-section {
         padding: 2rem 1rem;
+    }
+    
+    .search-container h2 {
+        font-size: 1.8rem;
+    }
+    
+    .search-instructions {
+        font-size: 1rem;
+    }
+    
+    .search-input {
+        padding: 0.8rem 1rem;
+        font-size: 0.95rem;
+    }
+    
+    #searchBtn {
+        padding: 0.9rem;
+        font-size: 1rem;
+    }
+    
+    .movie-card-detailed {
+        border-radius: 8px;
+    }
+    
+    .movie-poster {
+        height: 300px;
+    }
+    
+    .movie-info {
+        padding: 1.2rem;
+    }
+    
+    .movie-title {
+        font-size: 1.3rem;
+    }
+    
+    .movie-year {
+        font-size: 0.95rem;
+    }
+    
+    .movie-detail-item {
+        font-size: 0.95rem;
+        margin-bottom: 0.6rem;
+    }
+    
+    .movie-plot {
+        font-size: 0.95rem;
+    }
+    
+    .simple-results-title {
+        font-size: 1.5rem;
+        margin: 2rem 0 1rem 0;
+    }
+    
+    .movie-card-simple .movie-poster-small {
+        height: 300px;
+    }
+    
+    .movie-card-simple .movie-info-simple {
+        padding: 1.2rem;
+    }
+    
+    .movie-card-simple .movie-title {
+        font-size: 1.2rem;
+    }
+    
+    .modal {
+        padding: 0.5rem;
+    }
+    
+    .modal .movie-poster {
+        height: 250px;
+    }
+    
+    .close-modal {
+        right: 0.75rem;
+        top: 0.5rem;
+        font-size: 1.8rem;
+    }
+    
+    .footer {
+        padding: 1.5rem 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Small phones */
+@media (max-width: 360px) {
+    .logo-image {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .logo-text {
+        font-size: 1rem;
+    }
+    
+    .nav-links a {
+        font-size: 0.7rem;
+        padding: 0.25rem 0.4rem;
+    }
+    
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+    
+    .hero h2 {
+        font-size: 1.1rem;
+    }
+    
+    .search-container h2 {
+        font-size: 1.5rem;
+    }
+    
+    .movie-poster {
+        height: 250px;
+    }
+    
+    .movie-card-simple .movie-poster-small {
+        height: 250px;
+    }
+    
+    .modal .movie-poster {
+        height: 200px;
     }
 }

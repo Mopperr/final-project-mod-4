@@ -52,7 +52,7 @@ async function searchMovies() {
 
     try {
         // Search for movies
-        const searchUrl = `http://www.omdbapi.com/?apikey=${API_KEY}&s=${encodeURIComponent(searchTerm)}&type=movie`;
+        const searchUrl = `https://www.omdbapi.com/?apikey=${API_KEY}&s=${encodeURIComponent(searchTerm)}&type=movie`;
         const searchResponse = await fetch(searchUrl);
         const searchData = await searchResponse.json();
 
@@ -65,7 +65,7 @@ async function searchMovies() {
         
         // Fetch detailed information for all 6 movies
         const movieDetailsPromises = movies.map(movie => 
-            fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&i=${movie.imdbID}&plot=full`)
+            fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&i=${movie.imdbID}&plot=full`)
                 .then(res => res.json())
         );
 
